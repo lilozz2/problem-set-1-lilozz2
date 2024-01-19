@@ -19,6 +19,16 @@ class GraphTests: XCTestCase {
         XCTAssert(graph.containsNode(node1))
     }
 
+    func testAddNode_duplicateLabels_doesNothing() {
+        let graph = Graph<String>(isDirected: true)
+        let node1 = Node<String>("one")
+        let node2 = Node<String>("one")
+        graph.addNode(node1)
+        graph.addNode(node2)
+
+        XCTAssertEqual(graph.nodes, [node1])
+    }
+
     func testRemoveNode_listHasEdgesWithNodeAsDestination_edgesAreRemoved() {
         let graph = Graph<String>(isDirected: true)
         let node1 = Node<String>("one")
@@ -50,6 +60,20 @@ class GraphTests: XCTestCase {
         graph.addEdge(edge1!)
 
         XCTAssertEqual(graph.adjacentNodesFromNode(node1), [node2])
+    }
+
+    func testAddEdge_differingWeights() {
+        let graph = Graph<String>(isDirected: true)
+        let node1 = Node<String>("one")
+        let node2 = Node<String>("two")
+        let edge1 = Edge(source: node1, destination: node2, weight: 2.0)
+        let edge2 = Edge(source: node1, destination: node2)
+
+        graph.addEdge(edge1!)
+        graph.addEdge(edge2!)
+
+        XCTAssert(graph.edges.contains(edge1!))
+        XCTAssert(graph.edges.contains(edge2!))
     }
 
     func testAddEdge_undirectedGraph() {

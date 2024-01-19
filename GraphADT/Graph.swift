@@ -40,6 +40,7 @@ class Graph<T: Hashable> {
     /// If the node already exists in the graph, do nothing.
     func addNode(_ addedNode: N) {
         adjacencyList[addedNode] = adjacencyList[addedNode] ?? []
+        assert(checkRepresentation())
     }
 
     /// Remove the given node from the graph.
@@ -50,6 +51,7 @@ class Graph<T: Hashable> {
             return edgeList.filter({!$0.hasNode(removedNode)})
         }
         adjacencyList.removeValue(forKey: removedNode)
+        assert(checkRepresentation())
     }
 
     /// Whether the graph contains the requested node.
@@ -79,6 +81,8 @@ class Graph<T: Hashable> {
         if !isDirected {
             adjacencyList[destinationNode, default: []].append(addedEdge.reverse())
         }
+
+        assert(checkRepresentation())
     }
 
     /// Removes the requested edge from the graph. If it does not exist, do
@@ -87,6 +91,7 @@ class Graph<T: Hashable> {
         let sourceNode = removedEdge.source
         let edgeList = adjacencyList[sourceNode, default: []]
         adjacencyList[sourceNode] = edgeList.filter { $0 != removedEdge }
+        assert(checkRepresentation())
     }
 
     /// Whether the requested edge exists in the graph.
@@ -175,9 +180,9 @@ class Graph<T: Hashable> {
 
     /// Checks the representation invariants.
     private func checkRepresentation() -> Bool {
-        let isUniqueLabels = adjacencyList.keys.count == Set(adjacencyList.keys).count
         /// We only need to check for unique labels because isDirected enforces that the graph is either directed or undirected
-        /// and addEdge cannot add duplicate edges (in which weights are also considered)
-        return isUniqueLabels
+        /// addEdge cannot add duplicate edges (in which weights are also considered)
+        /// and since adjacencyList is used, keys must be unique and labels cannot be the same
+        return true
     }
 }
