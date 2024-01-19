@@ -11,7 +11,7 @@
 
  - Authors: CS3217
  */
-struct Edge<T: Equatable> {
+struct Edge<T: Hashable> {
     typealias N = Node<T>
 
     let source: N
@@ -47,6 +47,13 @@ struct Edge<T: Equatable> {
     /// Returns an edge in the opposite direction with the same cost.
     func reverse() -> Edge<T> {
         return Edge(source: destination, destination: source, weight: weight)!
+    }
+
+    /// Checks if an edge contains a particular node.
+    /// - Parameters
+    ///   - node: The node to be searched for
+    func hasNode(_ node: N) -> Bool {
+        return self.source == node || self.destination == node
     }
 
     /// Checks the representation invariants.

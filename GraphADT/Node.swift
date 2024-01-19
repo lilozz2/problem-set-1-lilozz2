@@ -9,12 +9,16 @@
 
  - Authors: CS3217
  */
-struct Node<T: Equatable> {
+struct Node<T: Hashable>: Hashable {
     var label: T
 
     /// Creates a `Node` with the given `label`.
     init(_ label: T) {
         self.label = label
+    }
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(label)
     }
 }
 
