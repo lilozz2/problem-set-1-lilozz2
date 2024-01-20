@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1C8EAB482B59480C001203FC /* GraphTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8EAB472B59480C001203FC /* GraphTests.swift */; };
+		1C8EAB4A2B5B4C79001203FC /* TreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8EAB492B5B4C79001203FC /* TreeTests.swift */; };
+		1C8EAB4C2B5B4C91001203FC /* String+CryptographyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8EAB4B2B5B4C91001203FC /* String+CryptographyTests.swift */; };
 		1C9008602B563D7D00AEE332 /* StackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C90085F2B563D7D00AEE332 /* StackTests.swift */; };
 		1C9008622B563D8800AEE332 /* QueueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9008612B563D8800AEE332 /* QueueTests.swift */; };
 		41D398AB1A45C4AE00E66F2C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D398AA1A45C4AE00E66F2C /* AppDelegate.swift */; };
@@ -39,6 +41,8 @@
 
 /* Begin PBXFileReference section */
 		1C8EAB472B59480C001203FC /* GraphTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphTests.swift; sourceTree = "<group>"; };
+		1C8EAB492B5B4C79001203FC /* TreeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeTests.swift; sourceTree = "<group>"; };
+		1C8EAB4B2B5B4C91001203FC /* String+CryptographyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+CryptographyTests.swift"; sourceTree = "<group>"; };
 		1C90085F2B563D7D00AEE332 /* StackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackTests.swift; sourceTree = "<group>"; };
 		1C9008612B563D8800AEE332 /* QueueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueTests.swift; sourceTree = "<group>"; };
 		41D398A51A45C4AE00E66F2C /* GraphADT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GraphADT.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,6 +139,8 @@
 				41D398D91A4650F300E66F2C /* NodeTests.swift */,
 				41D398DB1A466AE900E66F2C /* EdgeTests.swift */,
 				1C8EAB472B59480C001203FC /* GraphTests.swift */,
+				1C8EAB492B5B4C79001203FC /* TreeTests.swift */,
+				1C8EAB4B2B5B4C91001203FC /* String+CryptographyTests.swift */,
 				41D398BE1A45C4AE00E66F2C /* Supporting Files */,
 			);
 			path = GraphADTTests;
@@ -270,9 +276,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				41D398DC1A466AE900E66F2C /* EdgeTests.swift in Sources */,
+				1C8EAB4A2B5B4C79001203FC /* TreeTests.swift in Sources */,
 				41D398DA1A4650F300E66F2C /* NodeTests.swift in Sources */,
 				1C8EAB482B59480C001203FC /* GraphTests.swift in Sources */,
 				1C9008602B563D7D00AEE332 /* StackTests.swift in Sources */,
+				1C8EAB4C2B5B4C91001203FC /* String+CryptographyTests.swift in Sources */,
 				1C9008622B563D8800AEE332 /* QueueTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -171,8 +171,8 @@ class Graph<T: Hashable> {
         while !stack.isEmpty {
             let node = stack.pop()
             depthFirstArray.append(node!)
-            adjacencyList[node!, default: []].reverse() // push edges in reverse order
-            adjacencyList[node!, default: []].forEach({stack.push($0.destination)})
+            // push edges in reverse order
+            adjacencyList[node!, default: []].reversed().forEach({stack.push($0.destination)})
         }
 
         return depthFirstArray
