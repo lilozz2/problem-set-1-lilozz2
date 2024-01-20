@@ -1,9 +1,9 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/Nkz77OlX)
 # CS3217 Problem Set 1
 
-**Name:** Your name
+**Name:** Jair Goh
 
-**Matric No:** Your matric no
+**Matric No:** A0253158A
 
 ## Tips
 1. CS3217's docs is at https://cs3217.github.io/cs3217-docs. Do visit the docs often, as
@@ -45,7 +45,10 @@ justification here. Otherwise, you may discard this section.
 > Alternatively, you can choose to discard this function; if you do so, justify
 > why you decided to not use `checkRepresentation` in your class. (2 points)
 
-Your answer here
+Ended up not implementing as invariants are already enforced within structure:
+isDirected enforces that the graph is either directed or undirected,
+addEdge cannot add duplicate edges (in which weights are also considered)
+and since adjacencyList is used, keys must be unique and labels cannot be the same
 
 ## Problem 2.2
 > There are several ways to represent a graph. Here are a few:
@@ -59,7 +62,14 @@ Your answer here
 > Afterwards, describe and justify the Graph representation you choose to
 > implement. (2 points)
 
-Your answer here
+Collection: The simplest of all three, the advantage is the fact that it takes up
+the least space but is the least convenient to access. Take for example the function to
+find all nodes that are neighbours of a particular node. If we let n be the no.
+of nodes in the collection, and e be the number of edges it would take O(e) time as all
+nodes have to be checked. Adjacency lists would take O(1) while Adjacency matrices take
+O(e/n). In deciding whether to implement as a adjacency list or matrix, I looked at the structure
+of the code. Since we are using classes to represent the node and edge, a matrix would duplicate
+the work since the nested Array would technically already store the information about the edge.
 
 ## Problem 2.3
 > Imagine that the original representation invariant was changed to include a
@@ -72,4 +82,8 @@ Your answer here
 > execution efficiency) the result would be. Note that the new implementations 
 > must still adhere to the given spec. (1 point)
 
-Your answer here
+checkRepresentation. A check would need to be added to see if any edge is the reverse of another.
+In this case, it would be quite inefficient as all edges must be traversed. This is compared to if
+invariants were to be checked at every mutating function on a case by case level. Code will be more readable
+in the former solution and would be better scalable as well.
+
